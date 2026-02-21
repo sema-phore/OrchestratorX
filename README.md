@@ -99,7 +99,7 @@ The blog agent is a **multi-stage pipeline**: the `router` classifies the topic 
 |-------|------------|
 | **Frontend** | Streamlit 1.54+ |
 | **Agent Framework** | LangGraph 1.0.8+ (StateGraph, Send API, SqliteSaver) |
-| **LLMs** | OpenAI GPT-4o-mini (chat) · GPT-4.1-mini (blog) |
+| **LLMs** | OpenAI GPT-4o-mini (chat) · GPT-4o-mini (blog) |
 | **Embeddings** | OpenAI `text-embedding-3-small` |
 | **Image Generation** | Google Gemini (`google-genai`) |
 | **Vector Store** | ChromaDB (persisted per thread) |
@@ -148,17 +148,17 @@ cd OrchestratorX
 
 ### 2. Create and activate a virtual environment
 ```bash
-python -m venv venv
-source venv/bin/activate        # Linux / macOS
-venv\Scripts\activate           # Windows
+uv venv
+.venv/Scripts/activate        # Windows / Linux / macOS 
 ```
 
 ### 3. Install dependencies
 ```bash
-pip install -r requirements.txt
+uv init
+uv add -r requirements.txt
 ```
 
-> **Using `uv`?** A `uv.lock` file is included — run `uv sync` instead.
+> A `uv.lock` file is included — run `uv sync` instead.
 
 ### 4. Set up environment variables
 
